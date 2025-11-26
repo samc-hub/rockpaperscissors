@@ -1,33 +1,44 @@
-console.log("hello world")
+let userChoice = prompt ("Rock, Paper, Scissors, Shoot!");
+let humanScore = 0
+let computerScore = 0
 
-//generate random number 
-// if number is less than or equal to 0.33 return rock \ if greater than 0.33 but less than or equal to 0.66 return scissors / 
-//if greater than 0.66 and less than or equal to 1 return paper
- 
+//computer choice
+const stringArray = ['Rock', 'Paper', 'Scissors'];
+const randomIndex = Math.floor(Math.random() * stringArray.length);
+const randomString = stringArray[randomIndex];
+const computerMessage = "Computer Chooses " + randomString; 
 
-function getComputerChoice () {
-    const random = Math.random(); 
 
-    if (random <= 0.33 ) {
-        console.log("rock");
-    } else if  (random > 0.33 && random <= 0.66) {
-        console.log("scissors")
-    } else {
-        console.log("paper");
-    } 
+alert(computerMessage); 
+
+
+//human choice 
+ if (userChoice == "Rock" && randomString == "Scissors") {
+  console.log("You Win! ")
+    ++humanScore;
+    --computerScore;
+  console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
+ } 
+else if (userChoice == "Scissors" && randomString == "Paper") {
+console.log("You Win! " + "Score: " + (1 + humanScore));
+    ++humanScore;
+    --computerScore;
+console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
+} 
+else if (userChoice == "Paper" && randomString == "Rock") {
+console.log("You Win! " + "Score: " + (1 + humanScore));
+    ++humanScore;
+    --computerScore;
+console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
+}
+else if (userChoice == randomString) { 
+  console.log("No one Wins!!");
+  console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
+}
+else {
+  console.log("You lose")
+    --humanScore;
+    ++computerScore;
+    console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
 }
 
-getComputerChoice();
-
-
-// the problem = have user input rock, paper, or scissors. 
-
-//psuedocode: I need a function that returns the users input
-
-
-function getHumanChoice() {
-   let userInput = prompt("Rock, Paper, Scissors, Shoot");
-    console.log(userInput);
-}
-
-getHumanChoice();
