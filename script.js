@@ -22,7 +22,7 @@ alert(computerMessage);
 }
 
 
-function getUserChoice () {
+function getUserChoice() {
   userChoice = prompt("Rock, Paper, Scissors, Shoot!"); 
   formattedChoice = userChoice.toUpperCase();
   return formattedChoice;
@@ -53,9 +53,6 @@ function playRound() {
       alert("No one Wins!!");
       console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
     }
-    else if (formattedChoice !== "ROCK" || formattedChoice !== "SCISSORS" || formattedChoice !== "PAPER") {
-      alert("Inavlid option, Try again")
-    }
     else {
       alert("You lose")
         --humanScore;
@@ -63,10 +60,24 @@ function playRound() {
         console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
     }
 
+    
 }
 
+function playGame() {
 playRound();
 playRound();
 playRound();
 playRound();
 playRound();
+
+function declareWinner() {
+  if (humanScore > computerScore) {
+    console.log("You have won the game!");
+  } else if (computerScore > humanScore) {
+    console.log("You have lost the game")
+  }
+}
+declareWinner();
+}
+
+playGame();
