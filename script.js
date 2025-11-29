@@ -32,29 +32,29 @@ function playRound() {
   getUserChoice();
   getComputerChoice();
   if (formattedChoice == "ROCK" && randomString == "Scissors") {
-      alert("You Win!")
+      alert("You Win This Round!")
         ++humanScore;
         --computerScore;
       console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
     } 
     else if (formattedChoice == "SCISSORS" && randomString == "Paper") {
-    alert("You Win!");
+    alert("You Win This Round!");
         ++humanScore;
         --computerScore;
     console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
     } 
     else if (formattedChoice == "PAPER" && randomString == "Rock") {
-    alert("You Win!");
+    alert("You Win This Round!");
         ++humanScore;
         --computerScore;
     console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
     }
     else if (formattedChoice == randomString.toUpperCase()) { 
-      alert("No one Wins!!");
+      alert("It's A Draw This Round");
       console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
     }
     else {
-      alert("You lose")
+      alert("You Lost This Round!")
         --humanScore;
         ++computerScore;
         console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
