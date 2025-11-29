@@ -21,16 +21,15 @@ let computerMessage = "Computer Chooses " + randomString;
 alert(computerMessage);
 }
 
-function getFormattedChoice () {
-   formattedChoice = userChoice.toUpperCase();
-   return formattedChoice;
+
+function getUserChoice () {
+  userChoice = prompt("Rock, Paper, Scissors, Shoot!"); 
+  formattedChoice = userChoice.toUpperCase();
+  return formattedChoice;
 }
 
-
-
 function playRound() {
-    userChoice = prompt("Rock, Paper, Scissors, Shoot!");
-  getFormattedChoice(); 
+  getUserChoice();
   getComputerChoice();
   if (formattedChoice == "ROCK" && randomString == "Scissors") {
       alert("You Win!")
@@ -53,6 +52,9 @@ function playRound() {
     else if (formattedChoice == randomString.toUpperCase()) { 
       alert("No one Wins!!");
       console.log("Human Score: " + humanScore + " " + "Computer Score: " + computerScore);
+    }
+    else if (formattedChoice !== "ROCK" || formattedChoice !== "SCISSORS" || formattedChoice !== "PAPER") {
+      alert("Inavlid option, Try again")
     }
     else {
       alert("You lose")
